@@ -1,4 +1,4 @@
-import rearg = require('lodash/rearg');
+import { rearg } from 'lodash-es';
 
 import {
   DecoratorConfig,
@@ -12,7 +12,7 @@ const decorator = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(rearg, new PartialValueApplicator(), { property: true })
 );
 
-export function Rearg(indexes: ResolvableFunction | number | number[], ...args: Array<number | number[]>): LodashDecorator {
+export function Rearg(indexes: ResolvableFunction | number | number[], ...args: number[] | number[][]): LodashDecorator {
   return decorator(indexes, ...args);
 }
 export { Rearg as rearg };
